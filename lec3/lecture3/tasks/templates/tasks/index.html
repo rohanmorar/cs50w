@@ -4,7 +4,11 @@
 <h1>Tasks</h1>
 <ul>
   {% for task in tasks %}
-  <li>{{ task }}</li>
+    <li>{{ task }}</li>
+  <!-- django feature: conditional when no loop execution -->
+  {% empty %}
+    <li>No tasks.</li>
+  <!-- -- -->
   {% endfor %}
 </ul>
 <a href="{% url 'tasks:add' %}">Add Task</a>
